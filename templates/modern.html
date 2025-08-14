@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ personal.name }} - Resume</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.75in;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .name {
+            font-size: 28pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+        }
+        
+        .contact-info {
+            font-size: 10pt;
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2c3e50;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .summary {
+            text-align: justify;
+            line-height: 1.5;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            font-size: 12pt;
+            color: #2c3e50;
+        }
+        
+        .company {
+            font-style: italic;
+            color: #666;
+        }
+        
+        .duration {
+            float: right;
+            font-size: 10pt;
+            color: #888;
+        }
+        
+        .description {
+            margin-top: 8px;
+            text-align: justify;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill {
+            background-color: #ecf0f1;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 10pt;
+            color: #2c3e50;
+        }
+        
+        .degree {
+            font-weight: bold;
+            font-size: 12pt;
+        }
+        
+        .school {
+            font-style: italic;
+            color: #666;
+        }
+        
+        .year {
+            float: right;
+            font-size: 10pt;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="name">{{ personal.name }}</h1>
+        <div class="contact-info">
+            {{ personal.email }} | {{ personal.phone }} | {{ personal.location }}
+        </div>
+    </div>
+
+    {% if summary %}
+    <div class="section">
+        <h2 class="section-title">Summary</h2>
+        <div class="summary">{{ summary }}</div>
+    </div>
+    {% endif %}
+
+    {% if experience %}
+    <div class="section">
+        <h2 class="section-title">Experience</h2>
+        {% for job in experience %}
+        <div class="experience-item">
+            <div class="job-title">{{ job.title }}</div>
+            <div class="company">{{ job.company }}</div>
+            <div class="duration">{{ job.duration }}</div>
+            <div style="clear: both;"></div>
+            <div class="description">{{ job.description }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if education %}
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        {% for edu in education %}
+        <div class="education-item">
+            <div class="degree">{{ edu.degree }}</div>
+            <div class="school">{{ edu.school }}</div>
+            <div class="year">{{ edu.year }}</div>
+            <div style="clear: both;"></div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if skills %}
+    <div class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills">
+            {% for skill in skills %}
+            <span class="skill">{{ skill }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>

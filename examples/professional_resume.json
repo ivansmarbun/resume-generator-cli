@@ -1,0 +1,103 @@
+{
+  "personal": {
+    "name": "Ivan Marbun",
+    "title": "Software Engineer",
+    "email": "ivanmarbun@gmail.com",
+    "phone": "+62 852 3358 5378",
+    "location": "Jakarta, Indonesia",
+    "websites": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/ivan-marbun"
+      }
+    ]
+  },
+  "summary": "As a passionate and results-driven software engineer with extensive experience in leading teams and delivering innovative solutions, I am eager to contribute my expertise as a Software Engineer. My commitment to excellence and collaborative work aligns perfectly with your team's vision. I am excited about the opportunity to drive impactful projects and foster a culture of continuous improvement, ensuring we achieve remarkable results together.",
+  "experience": [
+    {
+      "title": "Lead Software Engineer, JULO",
+      "company": "JULO",
+      "duration": "Mar 2024",
+      "location": "Jakarta, Indonesia",
+      "bullets": [
+        "Do cost optimization on GCP environment by reducing uptime for some computer engine",
+        "Work together with the Product Team by giving out only technical solutions but also delivering the product flow",
+        "Managing work capacity for team members",
+        "Designing documentation for team members to work",
+        "Help team members unblock blockers on their work",
+        "Guide team member for their chosen career path"
+      ]
+    },
+    {
+      "title": "Senior Software Engineer, JULO",
+      "company": "JULO",
+      "duration": "Dec 2021 — Mar 2024",
+      "location": "Jakarta, Indonesia",
+      "bullets": [
+        "Handle partnership projects, including integrating with new partners",
+        "Designing system flow for end-to-end projects for partnership products",
+        "Leading teams from both teams from other partner by discussing API contracts, flow, specs, etc",
+        "Monitor system using some monitoring tools like Datadog, Grafana, Opencearch, etc"
+      ]
+    },
+    {
+      "title": "Software Engineer, Partnership",
+      "company": "JULO",
+      "duration": "Dec 2019 — Dec 2021",
+      "location": "Jakarta, Indonesia",
+      "bullets": [
+        "Handle integration with the third-party insurance company and creating an API to help other squads for the Indonesia system (PHP)",
+        "Migrating legacy systems to the new architecture from Fullstack to use event-based architecture using AWS SNS, SQS, and Lambda, and develop the project into microservices",
+        "Migrating legacy systems to the new architecture from Fullstack to use event-based architecture using AWS SNS, SQS, and Lambda, and develop the project into microservices"
+      ]
+    },
+    {
+      "title": "Fullstack Developer",
+      "company": "Undisclosed",
+      "duration": "undisclosed",
+      "location": "undisclosed"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Institut Teknologi Del",
+      "school": "Bachelor's Degree, Informatics",
+      "year": "2013 — 2018",
+      "gpa": "3.6/4.0"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "rating": 5
+    },
+    {
+      "name": "Django",
+      "rating": 5
+    },
+    {
+      "name": "REST API",
+      "rating": 5
+    },
+    {
+      "name": "Google Cloud",
+      "rating": 4
+    },
+    {
+      "name": "Docker",
+      "rating": 4
+    },
+    {
+      "name": "Javascript",
+      "rating": 4
+    },
+    {
+      "name": "AWS",
+      "rating": 3
+    },
+    {
+      "name": "SQL",
+      "rating": 4
+    }
+  ]
+}

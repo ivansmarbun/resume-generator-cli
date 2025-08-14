@@ -1,0 +1,55 @@
+{
+  "personal": {
+    "name": "Alex Johnson",
+    "email": "alex.johnson@email.com",
+    "phone": "+1-555-123-4567",
+    "location": "San Francisco, CA"
+  },
+  "summary": "Experienced software engineer with 5+ years of expertise in full-stack development, cloud architecture, and team leadership. Passionate about building scalable solutions and mentoring junior developers. Strong background in Python, JavaScript, and modern web technologies.",
+  "experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "TechCorp Solutions",
+      "duration": "2021-Present",
+      "description": "Lead a team of 4 developers in building microservices architecture using Python and Docker. Improved system performance by 40% through code optimization and caching strategies. Mentored junior developers and conducted code reviews to maintain high code quality standards."
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "StartupXYZ",
+      "duration": "2019-2021",
+      "description": "Developed and maintained web applications using React, Node.js, and PostgreSQL. Implemented CI/CD pipelines using GitHub Actions, reducing deployment time by 60%. Collaborated with product managers and designers to deliver user-focused features."
+    },
+    {
+      "title": "Junior Software Developer",
+      "company": "DevStudio Inc",
+      "duration": "2018-2019",
+      "description": "Built responsive web interfaces using HTML, CSS, and JavaScript. Participated in agile development processes and contributed to REST API development using Django. Gained experience in database design and optimization."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "school": "University of California, Berkeley",
+      "year": "2018"
+    },
+    {
+      "degree": "AWS Certified Solutions Architect",
+      "school": "Amazon Web Services",
+      "year": "2022"
+    }
+  ],
+  "skills": [
+    "Python",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "PostgreSQL",
+    "MongoDB",
+    "Git",
+    "CI/CD",
+    "Agile"
+  ]
+}

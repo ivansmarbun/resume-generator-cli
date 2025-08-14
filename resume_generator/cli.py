@@ -93,6 +93,77 @@ def list_templates(templates_dir):
         sys.exit(1)
 
 
+@click.command()
+@click.argument('template_name')
+@click.option(
+    '--templates-dir',
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    help='Custom templates directory (optional)'
+)
+def template_info(template_name, templates_dir):
+    """Show JSON requirements and features for a specific template."""
+    try:
+        if templates_dir:
+            generator = ResumeGenerator(str(templates_dir))
+            templates_path = Path(templates_dir)
+        else:
+            generator = ResumeGenerator()
+            package_dir = Path(__file__).parent.parent
+            templates_path = package_dir / "templates"
+        
+        # Check if template exists
+        available_templates = generator.get_available_templates()
+        if template_name not in available_templates:
+            click.echo(f"Error: Template '{template_name}' not found.", err=True)
+            click.echo(f"Available templates: {', '.join(available_templates)}", err=True)
+            sys.exit(1)
+        
+        # Look for documentation file
+        doc_file = templates_path / f"{template_name}.md"
+        
+        if doc_file.exists():
+            with open(doc_file, 'r', encoding='utf-8') as f:
+                click.echo(f.read())
+        else:
+            click.echo(f"No documentation found for template '{template_name}'.")
+            click.echo("This template uses the standard JSON structure:")
+            click.echo(_get_basic_json_structure())
+            
+    except Exception as e:
+        click.echo(f"Error getting template info: {e}", err=True)
+        sys.exit(1)
+
+
+def _get_basic_json_structure():
+    """Return basic JSON structure documentation."""
+    return '''
+{
+  "personal": {
+    "name": "Your Name",
+    "email": "email@example.com",
+    "phone": "+1-234-567-8900",
+    "location": "City, State"
+  },
+  "summary": "Professional summary...",
+  "experience": [
+    {
+      "title": "Job Title",
+      "company": "Company Name",
+      "duration": "2020-2023",
+      "description": "Job description..."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Degree Name",
+      "school": "University Name",
+      "year": "2020"
+    }
+  ],
+  "skills": ["Skill1", "Skill2", "Skill3"]
+}'''
+
+
 @click.group()
 def cli():
     """Resume Generator CLI - Generate professional PDF resumes from JSON data."""
@@ -102,6 +173,7 @@ def cli():
 # Add commands to group
 cli.add_command(generate)
 cli.add_command(list_templates, name='list-templates')
+cli.add_command(template_info, name='template-info')
 
 
 def main():
